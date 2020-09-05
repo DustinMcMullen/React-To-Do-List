@@ -2,20 +2,11 @@ import React, { useState } from "react";
 
 function App() {
   const [newListItem, setNewListItem] = useState();
-
-  const [allToDoItems, setAllToDoItems] = useState([
-    "start2",
-    "continue2",
-    "finish2"
-  ]);
-
-  const toDoItems = ["start", "continue", "finish"];
+  const [allToDoItems, setAllToDoItems] = useState([]);
 
   function handleListItem(event) {
-    const name = event.target.name;
     const value = event.target.value;
     setNewListItem(value);
-    console.log(newListItem);
   }
 
   function addItem() {
@@ -23,7 +14,6 @@ function App() {
       return [...prevValue, newListItem];
     });
     setNewListItem("");
-    console.log(allToDoItems);
   }
 
   function createList(toDoListItem) {
